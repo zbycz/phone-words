@@ -1,0 +1,44 @@
+---
+# see https://palantir.github.io/tslint/usage/configuration/
+extends:
+  - tslint:latest
+  - tslint-eslint-rules
+  - tslint-react
+
+rules:
+    # https://palantir.github.io/tslint/rules/arrow-parens/ disable here and set correctly via 'ter-arrow-parens' rule below
+    arrow-parens: false
+    # https://palantir.github.io/tslint/rules/ban-types/
+    ban-types:
+        - true
+        - ["Object", "Avoid using the `Object` type. Did you mean `object`?"]
+        - ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"]
+        - ["Number", "Avoid using the `Number` type. Did you mean `number`?"]
+        - ["String", "Avoid using the `String` type. Did you mean `string`?"]
+        - ["Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?"]
+    # https://github.com/palantir/tslint-react#rules
+    jsx-no-multiline-js: false
+    # https://palantir.github.io/tslint/rules/max-classes-per-file/
+    max-classes-per-file: [false]
+    # https://palantir.github.io/tslint/rules/no-implicit-dependencies/
+    no-implicit-dependencies: [true, "dev"]
+    # https://palantir.github.io/tslint/rules/no-submodule-imports/
+    no-submodule-imports: false
+    # https://palantir.github.io/tslint/rules/no-shadowed-variable/
+    no-shadowed-variable: false
+    # https://palantir.github.io/tslint/rules/no-this-assignment/
+    no-this-assignment: false
+    # https://palantir.github.io/tslint/rules/no-use-before-declare/
+    no-use-before-declare: true
+    # https://github.com/buzinas/tslint-eslint-rules/blob/master/src/docs/rules/objectCurlySpacingRule.md
+    object-curly-spacing: [true, "always"]
+    # https://palantir.github.io/tslint/rules/object-literal-sort-keys/
+    object-literal-sort-keys: false
+    # https://palantir.github.io/tslint/rules/ordered-imports/
+    ordered-imports: false
+    # https://palantir.github.io/tslint/rules/quotemark/
+    quotemark: [true, "single", "avoid-template", "jsx-double"]
+    # https://github.com/buzinas/tslint-eslint-rules/blob/master/src/docs/rules/terArrowParensRule.md
+    ter-arrow-parens: [true, "as-needed", {requireForBlockBody: true}]
+    # https://palantir.github.io/tslint/rules/trailing-comma/
+    trailing-comma: [true, {multiline: "never", singleline: "never"}]

@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "validate": "tslint -p tsconfig.dev.json -t verbose",
+    "validate-ci": "tslint -p tsconfig.dev.json -t checkstyle -o ./tslint-results.xml"
   },
   "dependencies": {
     "react": "^16.5.0",
@@ -15,15 +17,23 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.2",
     "ts-loader": "^5.1.0",
+    "tslint": "^5.11.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.0.3",
     "webpack": "^4.18.0",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8"
+  },
+  "config": {
+    "tslint": "'./src/**/*.{ts,tsx}'"
   }
 }
