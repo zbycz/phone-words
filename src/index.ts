@@ -1,2 +1,2 @@
-import "./App.js";
+import "./App";
 import "./index.css";
