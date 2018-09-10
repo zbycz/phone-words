@@ -33,6 +33,27 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader"]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "style-loader" // creates style nodes from JS strings
+                    },
+                    {
+                        loader: "css-loader", // translates CSS into CommonJS
+                        options: {
+                            importLoaders: 1,
+                            sourceMap: true,
+                        }
+                    },
+                    {
+                        loader: "sass-loader", // compiles Sass to CSS
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
             }
         ]
     },
