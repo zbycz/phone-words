@@ -1,0 +1,11 @@
+{
+  "name": "phone-words-server",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.16.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
