@@ -14,18 +14,21 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.4",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0"
+    "react-dom": "^16.5.0",
+    "ts-jest": "^23.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@types/jasmine": "^2.8.8",
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.2",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
@@ -41,5 +44,25 @@
   },
   "config": {
     "tslint": "'./src/**/*.{ts,tsx}'"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "server/src/**/*.{ts,tsx}",
+      "!**/*.d.ts"
+    ],
+    "collectCoverage": false,
+    "coverageReporters": [
+      "html"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
   }
 }
