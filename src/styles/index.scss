@@ -1,3 +1,4 @@
-body {
-    background: lighten(#f20, 30%);
-}
+$enable-gradients: true;
+
+@import "~bootstrap/scss/bootstrap";
+
