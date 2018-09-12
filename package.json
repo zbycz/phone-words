@@ -7,7 +7,9 @@
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "validate": "tslint -p tsconfig.dev.json -t verbose",
-    "validate-ci": "tslint -p tsconfig.dev.json -t checkstyle -o ./tslint-results.xml"
+    "validate-ci": "tslint -p tsconfig.dev.json -t checkstyle -o ./tslint-results.xml",
+    "server:compile": "tsc server/src/index.ts --outDir server/dist",
+    "server:run": "node server/dist/index"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
