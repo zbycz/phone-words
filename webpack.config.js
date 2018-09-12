@@ -57,6 +57,17 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3001',
+                secure: false,
+                onProxyReq: (req) => {
+                    console.log(`Proxying ${req.path} to http://localhost:3001`);
+                }
+            }
+        }
+    },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/index.html",
