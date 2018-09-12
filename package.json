@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
+    "test": "jest",
     "validate": "tslint -p tsconfig.dev.json -t verbose",
     "validate-ci": "tslint -p tsconfig.dev.json -t checkstyle -o ./tslint-results.xml",
     "server:compile": "tsc server/src/index.ts --outDir server/dist",
@@ -23,7 +24,7 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@types/jasmine": "^2.8.8",
+    "@types/jest": "^23.3.2",
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
     "babel-loader": "^8.0.2",

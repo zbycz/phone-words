@@ -14,7 +14,7 @@
     "noUnusedParameters": false,
     "outDir": "dist",
     "sourceMap": true,
-    "types": ["jasmine"],
+    "types": ["jest"],
     "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
