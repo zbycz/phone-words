@@ -3,7 +3,7 @@ import { staticFilesEndpoint } from './endpoints/staticFilesEndpoint';
 import { apiEndpoint } from './endpoints/apiEndpoint';
 
 const config = {
-    webRoot: process.env.WEBROOT || '../../dist',
+    webRoot: process.env.WEBROOT || './dist',
     port: process.env.PORT || 3001
 };
 
