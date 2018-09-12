@@ -14,22 +14,23 @@ const keypadMap = {
 
 
 export function phoneWordGenerator(inputNumbers: string): string[] {
+    const safeInputNumbers = inputNumbers.replace(/[^2-9]/g, '');
 
-    if (inputNumbers.length === 0) {
+    if (safeInputNumbers.length === 0) {
         throw new Error('Input numbers needed, eg. 123');
     }
 
     // Too big, cca 3^9 = 19683
-    if (inputNumbers.length > 9) {
+    if (safeInputNumbers.length > 9) {
         throw new Error('Too many input numbers, please use 9 or less.');
     }
 
-    const inputNumbersArray = inputNumbers.split('');
-    const maxDepth = inputNumbers.length;
+    const inputNumbersArray = safeInputNumbers.split('');
+    const maxDepth = safeInputNumbers.length;
 
     const output = [];
     const stack = [];
-    stack.push(...keypadMap[inputNumbersArray[0]]);
+    stack.push('');
 
     while (true) {
         const prefix = stack.pop();
@@ -51,7 +52,6 @@ export function phoneWordGenerator(inputNumbers: string): string[] {
                 stack.push(nextPrefix);
             }
         });
-
     }
 
     return output;
