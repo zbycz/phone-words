@@ -30,6 +30,11 @@ export class PhoneWordsContainer extends React.Component<{}, IPhoneWordsContaine
     }
 
     private onSubmit(phone) {
+        if (!phone) {
+            this.setState( { isLoading: false, error: 'Please add some numbers.' });
+            return;
+        }
+
         this.setState({ isLoading: true, error: null });
 
         apiService.getPhoneWords(phone).then((result) => {

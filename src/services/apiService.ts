@@ -6,7 +6,8 @@ function getPhoneWords(inputNumbers: string): Promise<IPhoneWordsResult> {
     return fetch(`/api/phone-words/${inputNumbers}`)
         .then((response) => {
             if (!response.ok) {
-                throw new Error('Invalid input, please use numbers 2-9');
+                // TODO resolve error promise and use server message instead
+                throw new Error('Invalid input, please use numbers 2-9, at most 9 characters.');
             }
             return response.json();
 
