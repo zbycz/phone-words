@@ -10,7 +10,10 @@
     "validate": "tslint -p tsconfig.dev.json -t verbose",
     "validate-ci": "tslint -p tsconfig.dev.json -t checkstyle -o ./tslint-results.xml",
     "server:compile": "tsc server/src/index.ts --outDir server/dist",
-    "server:run": "node server/dist/index"
+    "server:run": "node server/dist/index",
+    "heroku-postbuild": "yarn build && yarn server:compile",
+    "prepare": "cd server && yarn install",
+    "start": "yarn server:run"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
