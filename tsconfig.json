@@ -14,7 +14,7 @@
     "noUnusedParameters": false,
     "outDir": "dist",
     "sourceMap": true,
-    "types": ["jest"],
+    "types": ["jest", "node"],
     "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
